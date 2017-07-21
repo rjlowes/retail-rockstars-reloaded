@@ -1,0 +1,187 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    color: $colour-body;
+    font-family: $font-family-body;
+}
+
+h1, .h1 {
+    color: $colour-heading;
+    font-family: $font-family-heading;
+    font-weight: normal;
+    @include rem($font-size-h1);    /* 32px */
+    line-height: $line-height-h1;   /* 48px */
+    margin-bottom: 6px;
+}
+
+h2, .h2 {
+    color: $colour-heading;
+    font-family: $font-family-heading;
+    font-weight: normal;
+    @include rem($font-size-h2);      /* 24px */
+    line-height: $line-height-h2;     /* 24px */
+    margin-bottom: 6px;
+}
+
+h3, .h3 {
+    font-family: $font-family-heading;
+    //font-style: italic;
+    @include rem($font-size-h3);      /* 21px */
+    line-height: $line-height-h3;     /* 24px */
+    margin-bottom: #{$line-height-h3}em;
+}
+
+h4, .h4 {
+    font-family: $font-family-heading;
+    font-weight: normal;
+    line-height: $line-height-h4;
+    margin-bottom: #{$line-height-h4 / 2}em;
+    margin-top: #{$line-height-h4 / 2}em;
+    @include rem($font-size-h4);
+}
+
+p, .p { // This one is broken
+    @include rem($font-size-p);
+    font-family: $font-family-body;
+    line-height: $line-height-p;  //base line 24px
+    margin-bottom: #{$line-height-p}em;
+}
+
+label,
+.label {
+    color: $colour-form-control;
+    display: block;
+    font-size: 12px;
+    font-family: $font-family-heading;
+    text-transform: uppercase;
+}
+
+legend,
+.legend {
+    // color: $colour-primary;
+    color: #ccc;
+    @include rem($font-size-legend);
+    font-family: $font-family-heading;
+    line-height: $line-height-legend;
+    margin-bottom: 1em;
+}
+
+.type-lead {
+    @include rem($font-size-lead);
+    line-height: $line-height-lead;
+    margin-bottom: #{$line-height-lead}em;
+}
+
+.type-sml {
+    @include rem($font-size-sm);
+    line-height: $line-height-sm;
+    margin-bottom: #{$font-size-sm}em;
+}
+
+.type-mark {
+    color: $colour-primary;
+}
+
+// Clears the top and bottom margin (preserves vertical rhythm)
+.type-clear-margin {
+    margin-bottom: 0;
+    margin-top: 0;
+    & > * {
+        margin-bottom: 0;
+        margin-top: 0; 
+    }
+}
+
+.text-mb0 {margin-bottom: 0;}
+.text-mb1 {@include rem-fallback(margin-bottom, $baseline)}
+.text-mb2 {@include rem-fallback(margin-bottom, $baseline * 2)}
+.text-mb4 {@include rem-fallback(margin-bottom, $baseline * 4)}
+.text-mb6 {@include rem-fallback(margin-bottom, $baseline * 6)}
+
+.text-jumbo {
+    @include font-size(8);
+    text-transform: uppercase;
+    letter-spacing: 12px;
+}
+
+
+// Move to general utils
+.rm-margin {margin-bottom: 0; margin-top: 0;}
+.rm-margin-top {margin-top: 0;}
+.rm-margin-bottom {margin-bottom: 0;}
+
+.dim-el {opacity: .8;}
+
+.strong {
+    color: #4d4d4d;
+    font-family: $font-family-body-bold;
+    font-weight: normal;
+}
+
+strong {@extend .strong;}
+em {@extends .strong;}
+
+
+a {
+    color: $colour-dark-grey;
+}
+
+.list-std {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+}
+
+li {
+    @include rem($font-size-list);
+    line-height: $line-height-list;
+    margin-bottom: #{$font-size-list/2}em;
+}
+
+dl {
+    overflow:hidden;
+}
+
+dt, dd {
+    @extend li;
+}
+
+dd {
+    text-align: right;
+}
+
+.dl-asymetric dt {
+    float: left;
+    width: 66.666%;
+}
+
+.dl-asymetric dd {
+    float: left;
+    width: 33.333%;
+}
+
+// See http://stackoverflow.com/questions/12783419/hide-text-with-css-best-practice
+.type-sr-only {
+    display: block;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.sr-hidden {
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+}
+
+
+.type-inverse {
+    p,
+    a {color: $colour-body-inverse;}
+    h1, .h1,
+    legend {color: $colour-heading-inverse;}
+}

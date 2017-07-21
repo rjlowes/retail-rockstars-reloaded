@@ -1,0 +1,52 @@
+
+// dashboard
+.card {
+}
+
+.card__footer {
+	position: relative;
+}
+
+.card__actions {
+	padding: 0 20px;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 100%;
+
+	&--bottom {
+
+	}
+}
+
+.card-callout {
+	overflow: hidden;
+}
+
+.card-callout__img {
+	float: left;
+	width: 50%;
+
+	&--right {
+		float: right;
+	}
+}
+
+.card-callout__text {
+
+}
+
+// see .address
+.card-info {
+	//border:1px dotted yellow;
+	//background: #3a5d96;
+}
+
+.card-info__text {
+	border-left: 1px solid #ebebeb;
+	padding-left: 20px;
+}
+
+.card-info__actions {
+	padding-left: 21px;
+}

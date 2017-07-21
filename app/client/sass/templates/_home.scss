@@ -1,0 +1,7 @@
+
+
+.info-block {
+	@include rem-fallback(padding, 8);
+	text-align: center;
+
+}

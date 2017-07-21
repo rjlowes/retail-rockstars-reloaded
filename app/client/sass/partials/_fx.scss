@@ -1,0 +1,77 @@
+.fx-pipes__top,
+.fx-pipes__bottom,
+.fx-pipes__right,
+.fx-pipes__left {
+    background: rgba(62, 62, 62, 0.8);
+    z-index: 10;
+    transition: all .2s ease;
+}
+
+.fx-pipes__top,
+.fx-pipes__bottom {
+    height: 1px;
+    width: 0;
+}
+
+.fx-pipes__right,
+.fx-pipes__left {
+    height: 0;
+    width: 1px;
+}
+
+.fx-pipes__bottom {
+    left: 0;
+    right: auto;
+    position: absolute;
+    bottom: -1px;
+
+    .keep-closed &,
+    .fx-pipes:hover & {
+        right: 0;
+        left: auto;
+        width: 100%;
+    }
+}
+
+.fx-pipes__top {
+    left: auto;
+    right: 0;
+    position: absolute;
+    top: -1px;
+
+    .keep-closed &,
+    .fx-pipes:hover & {
+        right: auto;
+        left: 0;
+        width: 100%;
+    }
+}
+
+.fx-pipes__left {
+    bottom: auto;
+    top: 0;
+    position: absolute;
+    left: -1px;
+
+    .keep-closed &,
+    .fx-pipes:hover & {
+        top: auto;
+        bottom: 0;
+        height: 100%;
+    }
+}
+
+.fx-pipes__right {
+    bottom: 0;
+    top: auto;
+    position: absolute;
+    right: -1px;
+
+    .keep-closed &,
+    .fx-pipes:hover & {
+        top: 0;
+        bottom: auto;
+        height: 100%;
+    }
+
+}

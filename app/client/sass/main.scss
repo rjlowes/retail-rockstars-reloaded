@@ -1,0 +1,107 @@
+//
+// notes on namespace prefixes
+//
+// .t = typography elements
+// .p = page elements
+// .u = utility classes
+// .c- = component ???
+
+// @import 'mixins/all';
+// Remove all of these
+@import 'mixins/breakpoint';
+@import 'mixins/buttons';
+@import 'mixins/styles';
+@import 'mixins/utils';
+
+@import "abstract/variables";
+@import "abstract/mixins/forms";
+@import "abstract/mixins/typography";
+@import "abstract/mixins/screenreaders";
+
+@import 'base/reset';
+
+
+@import "../../../node_modules/bootstrap/scss/bootstrap-grid";
+
+@import 'base/buttons';
+@import 'base/icons';
+@import 'base/utils';
+@import "base/tables";
+@import "base/typography";
+@import "base/font-face";
+@import 'base/form';
+
+@import 'partials/icons';
+// delete
+//@import 'partials/fonts';
+@import 'partials/img';
+
+@import 'components/global-header';
+@import 'components/global-footer';
+@import "components/banners";
+@import "components/cards";
+@import "components/form-groups";
+@import 'components/global-navigation';
+// @import 'components/main-nav';
+
+@import 'components/media';
+
+
+@import 'partials/footer';
+@import 'partials/search';
+
+@import 'partials/local-nav';
+@import 'partials/button';
+@import 'partials/modules';
+@import 'partials/sections';
+@import 'partials/cards';
+@import 'partials/thumbnail';
+@import 'partials/rating';
+@import 'partials/pagination';
+@import 'partials/loader';
+@import 'partials/list';
+@import 'partials/filters';
+
+@import 'partials/dashboard';
+//@import 'partials/layerslider';
+@import 'partials/fx';
+
+@import 'pages/home';
+@import 'pages/account';
+
+@import "templates/basket";
+@import "templates/home";
+@import 'templates/product';
+
+//@import "../../node_modules/slick-carousel/slick/slick.scss";
+//@import "../../node_modules/slick-carousel/slick/slick-theme.scss";
+//
+//@import '../../node_modules/wallop/css/wallop';
+//@import '../../node_modules/wallop/css/wallop--slide';
+
+
+// Debugging 
+body {
+	border-top: 4px solid red;
+
+	@include media-breakpoint-up(xs) {
+		border-top: 4px solid green;
+	}
+
+	@include media-breakpoint-up(sm) {
+		border-top: 4px solid blue;
+	}
+
+	@include media-breakpoint-up(md) {
+		border-top: 4px solid yellow;
+	}
+
+	@include media-breakpoint-up(lg) {
+		border-top: 4px solid orange;
+	}
+
+	@include media-breakpoint-up(xl) {
+		border-top: 4px solid steelblue;
+	}
+}
+

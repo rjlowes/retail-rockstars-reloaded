@@ -1,0 +1,51 @@
+// Rename
+/*.navbar__search {
+    order: 2;
+    width: 250px;
+
+    @include media-breakpoint-up(md) {
+        float: right;
+    }
+}*/
+
+.search {
+    clear: both;
+    width: 100%;
+    z-index: 100;
+}
+
+.search__input-wrap {
+    overflow: hidden;
+}
+
+.search__input {
+    background: none;
+    border: 1px solid $border-color;
+    font-family: $font-family-heading;
+    font-size: 11px;
+    line-height: 30px;
+    width: 216px;
+}
+
+.search__btn {
+    background-color: $btn-default-colour;
+    border: none;
+    float: right;
+    color: #fff;
+    height: 34px;
+    width: 34px;
+    font-size: 22px;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  height: 10px;
+  width: 10px;
+  color: #fff;
+}
+
+input[type="search"]::-webkit-search-cancel-button:after {
+    content: "\ea01";
+    font: normal normal normal 14px/1 iconfont;
+    position: absolute;
+}

@@ -1,0 +1,16 @@
+.global-footer {
+	background-color: $colour-dark-grey;
+	padding: 50px 30px;
+}
+
+.global-footer__about-us {
+	@extend .col-sm-12, .col-md-6, .col-lg-4;
+}
+
+.global-footer__links {
+	@extend .col-sm-12, .col-md-6, .col-lg-4;
+}
+
+.global-footer__contact {
+	@extend .col-md-6, .col-lg-4;
+}
