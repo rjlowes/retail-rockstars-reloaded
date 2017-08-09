@@ -51,7 +51,6 @@
 @import 'partials/search';
 
 @import 'partials/local-nav';
-@import 'partials/button';
 @import 'partials/modules';
 @import 'partials/sections';
 @import 'partials/cards';
@@ -69,6 +68,7 @@
 @import 'pages/home';
 @import 'pages/account';
 
+@import "templates/login";
 @import "templates/basket";
 @import "templates/home";
 @import 'templates/product';

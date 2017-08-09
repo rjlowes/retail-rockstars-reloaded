@@ -27,14 +27,18 @@ export default class LoginForm extends Component {
         return (
             <form method="post" onSubmit={this.handleSubmit}>
                 <div className="form-group">
-                    <label htmlFor="email" className="form-label">Email</label>
-                    <input type="email" name="email" id="email" className="form-input" onChange={this.handleChange} />
+                    <label htmlFor="email" className="form-group__label">Email</label>
+                    <div className="form-group__input">
+                        <input type="email" name="email" id="email" className="form-input" placeholder="email@example.com" onChange={this.handleChange} />
+                    </div>
                 </div>
                 <div className="form-group">
-                    <label htmlFor="password" className="form-label">Password</label>
-                    <input type="password" name="password" id="password" className="form-input" onChange={this.handleChange} />
+                    <label htmlFor="password" className="form-group__label">Password</label>
+                    <div className="form-group__input">
+                        <input type="password" name="password" id="password" className="form-input" placeholder="Your password" onChange={this.handleChange} />
+                    </div>
                 </div>
-                <button type="submit" className="btn">Login</button>
+                <button type="submit" className="btn btn--block">Sign in</button>
             </form>
         );
     }

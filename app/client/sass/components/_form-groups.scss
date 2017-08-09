@@ -6,7 +6,8 @@
 }
 
 .form-group__label {
-    @extend .col-md-4;
+    @extend .col-md-12;
+    margin-bottom: 6px;
     @include media-breakpoint-down(sm) {
         margin-bottom: 8px;
     }
@@ -16,5 +17,5 @@
 }
 
 .form-group__input {
-    @extend .col-md-8;
+    @extend .col-md-12;
 }

@@ -16,8 +16,12 @@ gulp.task('mocha', (done) => {
     // package.json
     mongoose.connect(function () {
         mongoose.loadModels();
+        const mgoose = require('mongoose');
+        let Customer = mgoose.model('Customer');
+
+        // console.log(Customer);
         
-        gulp.src('./app/server/tests/modules/links/models/*.js')
+        gulp.src('./app/server/tests/modules/customer/models/*.js')
             .pipe(mocha({reporter: 'spec', timeout: 10000}))
             .on('error', err => {
                 console.log(chalk.bgRed('Error in mocha test.'))

@@ -46,8 +46,19 @@ export default class LoginPage extends Component {
 
     render() {
         return (
-            <div className="container">
-                <LoginForm user={this.state.user} parentSubmit={this.submitLogin} />
+            <div className="t-login">
+                <div className="t-login__primary-row">
+                    <div className="t-login-main">
+                        <div>
+                            <h1>Sign in</h1>
+                            <p><Link to="/register" className="logo">Create an account</Link> or sign in to continue.</p>
+                        </div>
+                        <LoginForm user={this.state.user} parentSubmit={this.submitLogin} />
+                    </div>
+                    <div className="t-login-sidebar">
+                        <p>Test content</p>
+                    </div>
+                </div>
             </div>
         );
     }
