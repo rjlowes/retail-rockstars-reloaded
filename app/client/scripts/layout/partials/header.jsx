@@ -13,10 +13,11 @@ import {getCustomerDetails} from 'lib/redux/customer/customerDetailActions';
 
 @connect((store) => {
     return {
-        customer: store.customer.login.details
+        customer: store.customer.authentication.details,
+        isAuthenticated: store.customer.authentication.isAuthenticated
     };
 })
-export default class Header extends Component {
+export default class Header extends Component { // 52515
 
     // componentDidMount() {
     //     store.subscribe(() => {
@@ -30,7 +31,7 @@ export default class Header extends Component {
 
     componentDidMount() {
         store.subscribe(() => {
-            console.log(store.getState());
+            // console.log(store.getState());
         });
 
         store.dispatch(getCustomerDetails());
@@ -38,22 +39,28 @@ export default class Header extends Component {
     }
 
     showCustomer() {
-        console.log('header showCustomer');
-        console.log(this.props.customer);
+        // console.log('header showCustomer');
+        // console.log(this.props.customer);
         if(this.props.customer) {
             return (<p>**{this.props.customer.firstname}**</p>)
+        }
+
+        if(this.props.isAuthenticated) {
+            return (<p>yes it is.</p>)
         }
 
         return null;
     }
 
 	render() {
+        console.log('props: ', this.props);
 		return (
 			<header className="g-header">
                 <div className="g-header__container">
                     <div className="g-header__menu-btn">
                         <MenuButton open={true} />
                     </div>
+                    { this.showCustomer() }
                     {/* 
                     <AccountLinks customer={this.props.customer} />
                     */}

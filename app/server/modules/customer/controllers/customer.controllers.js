@@ -27,10 +27,13 @@ exports.register = function (req, res, next) {
 
 
 exports.login = function (req, res, next) {
+    console.log('login');
     passport.authenticate('local-login', (err, customer, info) => {
+        console.log('authenticate');
         if (err) return next(err);
-
+        console.log('after erro');
         if (!customer) {
+            console.log('no customer');
             res.sendStatus(401);
         } else {
             req.login(customer, () => {

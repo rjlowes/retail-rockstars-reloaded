@@ -9,6 +9,9 @@ const defaultState = {
     isAuthenticated: false
 }
 
+const loginSuccess = (state, loggedIn) => {
+    return state['loggedIn'] = loggedIn;
+};
 
 function loginReducer(state = defaultState, action) {
     switch(action.type) {
@@ -18,14 +21,11 @@ function loginReducer(state = defaultState, action) {
                 isFetching: true
             };
         case LOGIN_SUCCESS:
-            // return Object.assign({}, state, {
-            //     isFetching: false
-            // }, action.customer);
             return {
                 ...state,
                 isFetching: false,
-                details: action.customer
-            }
+                isAuthenticated: action.isAuthenticated
+            };
         case LOGIN_FAILURE:
             return {
                 ...state,

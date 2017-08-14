@@ -1,7 +1,7 @@
 import {combineReducers} from 'redux';
 
 import customers from './customerReducers';
-import login from '../customer/loginReducers';
+import authentication from '../customer/loginReducers';
 import details from '../customer/customerDetailReducers';
 import categories from './categoryReducers';
 import addresses from './addressReducers';
@@ -13,7 +13,7 @@ import createAddressReducers from '../addressbook/createAddressReducers';
 const ecomApp = combineReducers({
     customers,
 	customer: combineReducers({
-        login,
+        authentication,
         details
     }),
     // customerLogin,

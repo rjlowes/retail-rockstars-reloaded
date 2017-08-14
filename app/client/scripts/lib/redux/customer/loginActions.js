@@ -11,13 +11,14 @@ function loginRequest() {
     }
 };
 
-
 function loginSuccess(json) {
-    return {
+    console.log('loginSuccess: ', json);
+    let newState =  {
         type: LOGIN_SUCCESS,
-        customer: json,
-        receivedAt: Date.now()
+        isAuthenticated: json.isAuthenticated
     };
+    console.log('new state: ', newState);
+    return newState;
 };
 
 function loginFailure(err) {
@@ -42,26 +43,3 @@ export function login(credentials) {
         .then(json => dispatch(loginSuccess(json)));
     }
 }
-
-
-// TODO workout how to respond with the redirect!
-
-
-// submitLogin() {
-//         let headers = new Headers({'Content-Type': 'application/json'});
-//         let request = new Request('/api/login', {
-//             method: 'POST',
-//             headers: headers,
-//             body: JSON.stringify(this.state.user),
-//             credentials: 'include'
-//         });
-
-//         fetch(request)
-//             .then((response) => response.json())
-//             .then(data => {
-//                 // TODO this may need to optionally redirect to the checkout
-//                 this.props.history.push('/account/dashboard');
-//             }).catch(err => {
-//                 console.log('err ', err);
-//             })
-//     }
