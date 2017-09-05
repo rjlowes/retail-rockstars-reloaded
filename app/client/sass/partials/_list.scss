@@ -2,10 +2,22 @@
 // List elements
 // --------------------------------------------------
 
+// basic list
+.list {
+
+}
+
+.list__item {
+    @include font-size($font-size-p);
+    font-family: $font-family-body;
+    line-height: $line-height-p;  //base line 24px
+}
+
 // Horizontal list with optional bullet seperators
 .list-linear {
     // overflow: hidden;   // or add clearfix
     @include clearfix;
+    width: 100%;
 
     > li {
         display: inline-block;
@@ -17,6 +29,7 @@
         padding-left: 18px;
     }
 
+    // TODO delete these
     &--tight {
         padding: 0;
     }
@@ -24,6 +37,10 @@
     &--bullet {
         list-style: disc;
         margin-left: 20px;
+    }
+
+    &--align-right {
+        text-align: right;
     }
     
     //&--bullet > li:not(:first-child):before {

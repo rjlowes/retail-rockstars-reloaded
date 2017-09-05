@@ -8,7 +8,8 @@ let CustomerSchema = mongoose.Schema({
     password: String,
     title: String,
     firstname: String,
-    lastname: String
+    lastname: String,
+    fullname: String
 });
 
 /**

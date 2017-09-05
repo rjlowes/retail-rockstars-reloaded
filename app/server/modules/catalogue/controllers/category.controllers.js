@@ -37,7 +37,7 @@ exports.productList = function (req, res) {
 	for(var i = 0; i < 10; i++) {
 		products.push({
 			id: i,
-			title: 'Product ' + i,
+			title: 'Black Printed Regular Fit Round Neck T-Shirt',
 			description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac lectus laoreet, aliquet lacus at, maximus nisl. Suspendisse potenti. Mauris imperdiet, dolor quis blandit dignissim, purus justo consectetur erat, nec finibus enim nunc nec ligula. Nunc ullamcorper orci ut orci tristique ultrices.'
 		});
 	}
@@ -49,7 +49,7 @@ exports.productDetails = function (req, res) {
 	let productId = req.params.productId;
 
 	let product = {
-        title: 'Product ' + productId,
+        title: 'Black Printed Regular Fit Round Neck T-Shirt',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac lectus laoreet, aliquet lacus at, maximus nisl. Suspendisse potenti. Mauris imperdiet, dolor quis blandit dignissim, purus justo consectetur erat, nec finibus enim nunc nec ligula. Nunc ullamcorper orci ut orci tristique ultrices.',
         variants: [{
 				sku: 'abc',

@@ -1,19 +1,14 @@
 import React, {Component} from 'react';
-
 import {Link} from 'react-router-dom';
-
 import AddressList from 'lib/addressbook/AddressList';
-
 import store from 'lib/redux/store';
 import {connect} from 'react-redux';
+import * as AddressBookActionCreators from 'lib/redux/addressbook/addressBookActionCreators'
 
-import {fetchAddressList} from 'lib/redux/addressbook/fetchAddressListActions';
 
-// @connect((store) => {
-//     return {
-//         addressbook: store.addresses.addressbook
-//     };
-// })
+@connect(store => {
+    return {addresses: store.addressBook.addresses}
+})
 export default class AddressListContainer extends Component {
 
     constructor(props) {
@@ -22,33 +17,13 @@ export default class AddressListContainer extends Component {
     }
 
     componentDidMount() {
-        let dummyAddresses = [{
-            title: 'Mr',
-            firstname: 'John',
-            lastname: 'Smith',
-            address1: '1 Crendon Street',
-            address2: '',
-            address3: '',
-            townCity: 'High Wycombe',
-            county: 'Bucks',
-            country: 'United Kingdom',
-            postcode: 'TE456ST',
-            telephone: '07788666555'
-        }];
-        
-        //this.setState({addresses: dummyAddresses});
-        store.dispatch(fetchAddressList());
+        let {dispatch} = this.props;
+        dispatch(AddressBookActionCreators.fetchAddressList());
     }
 
     render() {
-
-        console.log(store.getState());
-
-        console.log('rending....');
-        console.log(this.props.addressbook);
-
         return (
-            <AddressList addresses={this.state.addresses} />
+            <AddressList addresses={this.props.addresses} />
         )
     }
 }

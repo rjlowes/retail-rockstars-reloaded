@@ -1,38 +1,29 @@
 .g-header {
     @include clearfix;
     background: #fff;
-    border-bottom: 1px solid $border-color;
-    height: 65px;
-    padding: 10px 0;
-    margin-bottom: 10px;
+    border-bottom: 1px solid $colour-border-reg;
+    margin-bottom: 12px;
     position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     z-index: 100;
-
-    // display: flex;
 }
 
 .g-header__container {
     @extend .container;
-    
-    height: 65px;
-    // padding: 10px 0;
-    // margin-bottom: 10px;
-    // position: relative;
-    // z-index: 100;
-
+    padding: 12px 0;
+    align-items: center;
     display: flex;
+    flex-wrap: wrap;
 }
 
-.g-header__navigation,
-.g-header__session {
-    flex-grow: 1;
-    flex-basis:33%;
+.g-header__toolbar {
+    border-bottom: 1px solid $colour-border-reg;
+    padding: 12px 0;
 }
 
 .g-header__logo {
-    // display: block;
-    // margin: 9px auto;
     width: 142px;
 
     & img {
@@ -44,7 +35,32 @@
 .g-header__navigation {
     @include media-breakpoint-up(md) {
         align-self: center;
+        flex-grow: 1;
+        margin-left: $baseline * 2;
     }
+}
+
+.g-header__search {
+    width: 100%;
+
+    @include media-breakpoint-down(md) {
+        order: 4;
+
+        bottom: 0;
+        left: 0;
+        padding: $baseline;
+        position: fixed;
+        width: 100%;
+    }
+
+    @include media-breakpoint-up(lg) {
+        margin-right: $baseline * 2;
+        width: 400px;
+    }
+}
+
+.g-header__basket {
+    width: 36px;
 }
 
 .g-header__menu-btn {

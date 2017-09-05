@@ -5,6 +5,7 @@ import TitleContainer from 'lib/form/input/TitleContainer';
 const AddressForm = (props) => {
     return (
         <form onSubmit={props.submit}>
+            <p>firstname: {props.address.firstname}</p>
             <fieldset>  
                 <div className="form-group">
                     <label htmlFor="field-title" className="form-group__label">Title</label>
@@ -15,7 +16,7 @@ const AddressForm = (props) => {
                 <div className="form-group">
                     <label htmlFor="field-firstname" className="form-group__label">Firstname</label>
                     <div className="form-group__input">
-                        <input aria-required="true" aria-label="First name" name="firstname" id="field-firstname" className="form-input" onChange={props.handleChange} required />
+                        <input aria-required="true" aria-label="First name" value={props.address.firstname} name="firstname" id="field-firstname" className="form-input" onChange={props.handleChange} required />
                     </div>
                 </div>
                 <div className="form-group">
@@ -85,6 +86,7 @@ const AddressForm = (props) => {
                     </div>
                 </div>
             </fieldset>
+            <button>Go</button>
         </form>
     );
 };

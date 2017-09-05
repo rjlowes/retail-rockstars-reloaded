@@ -3,16 +3,35 @@ import React, {Component} from 'react';
 import AddressForm from 'lib/form/AddressForm';
 
 import store from 'lib/redux/store';
+import {connect} from 'react-redux';
 import {createAddress} from 'lib/redux/actions/addressActions';
 
+import * as addressBookActionCreators from 'lib/redux/addressbook/addressBookActionCreators';
+
+@connect()
 export default class AddressFormContainer extends Component {
 
     constructor(props) {
         super(props);
+        // TODO create a model
+        this.state = {
+            title: '', 
+            firstname: '', 
+            lastname: '', 
+            address1: '', 
+            address2: '', 
+            address3: '',
+            townCity: '',
+            county: '',
+            postcode: '',
+            country: ''
+        };
         this.handleChange = this.handleChange.bind(this);
+        this.submit = this.submit.bind(this);
     }
 
     componentDidMount() {
+        let {dispatch} = this.props;
         // testing async store action
         let address = {
             title: 'Mr',
@@ -25,19 +44,28 @@ export default class AddressFormContainer extends Component {
             postcode: 'TE456ST',
             country: 'United Kingdom'
         }
-        store.dispatch(createAddress(address))
+        // store.dispatch(createAddress(address))
+        console.log(this.state);
     }
 
-    submit() {
-        
+    
+
+    handleChange(event) {
+        // TODO use this https://github.com/kolodny/immutability-helper
+        let address = this.state;
+        address[event.target.name] = event.target.value;
+        this.setState(address);
     }
 
-    handleChange() {
-
+    submit(event) {
+        event.preventDefault();
+        let {dispatch} = this.props;
+        // TODO validate
+        dispatch(addressBookActionCreators.createAddress(this.state))
     }
 
     render() {
 
-        return (<AddressForm submit={this.submit} handleInputChange={this.handleChange} />)
+        return (<AddressForm address={this.props.address} submit={this.submit} handleChange={this.handleChange} />)
     }
 }

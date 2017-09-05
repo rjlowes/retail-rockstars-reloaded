@@ -9,15 +9,15 @@ export default class ProductCard extends Component {
 	    let product = this.props.product;
 
 		return (
-			<article className="thumb" itemScope itemType="http://schema.org/Product">
-                <Link to={`/products/${product.id}`} itemProp="url" className="thumb__img">
-                    <img src="/images/products/placeholder/mobile-prod/1.jpg" className="img-responsive" />
+			<article className="c-thumbnail" itemScope itemType="http://schema.org/Product">
+                <Link to={`/products/${product.id}`} itemProp="url" className="c-thumbnail__img">
+                    <img src="https://static1.jassets.com/p/Pepe-Jeans-Yellow-Printed-Round-Neck-T-Shirt-4625-1776191-1-catalog_s.jpg" className="img-responsive" />
                 </Link>
-                <div className="thumb__content">
+                <div className="c-thumbnail__content">
                     <h2 className="type-clear-margin h4">
                         <Link to={`/products/${product.id}`}>{product.title}</Link>
                     </h2>
-                    <p className="offer type-sml" itemScope itemType="http://schema.org/Offer">
+                    <p className="offer text-small" itemScope itemType="http://schema.org/Offer">
                         <span className="price" itemProp="price">&pound;100.00</span>
                     </p>
                 </div>

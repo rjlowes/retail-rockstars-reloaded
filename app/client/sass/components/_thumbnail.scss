@@ -1,0 +1,19 @@
+.c-thumbnail {
+
+    position: relative;
+
+    // Spacer needs to move
+    margin-bottom: 10px;
+}
+
+.c-thumbnail__img {
+    & img {
+        display: block;
+    }
+}
+
+.c-thumbnail__content {
+    padding: (2 * $baseline) 0;
+
+    p {margin-bottom: 0;}
+}

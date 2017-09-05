@@ -40,8 +40,11 @@
 @import 'components/global-footer';
 @import "components/banners";
 @import "components/cards";
+@import "components/headers";
 @import "components/form-groups";
 @import 'components/global-navigation';
+@import "components/togglebox";
+@import "components/thumbnail";
 // @import 'components/main-nav';
 
 @import 'components/media';
@@ -54,15 +57,12 @@
 @import 'partials/modules';
 @import 'partials/sections';
 @import 'partials/cards';
-@import 'partials/thumbnail';
 @import 'partials/rating';
 @import 'partials/pagination';
 @import 'partials/loader';
 @import 'partials/list';
 @import 'partials/filters';
 
-@import 'partials/dashboard';
-//@import 'partials/layerslider';
 @import 'partials/fx';
 
 @import 'pages/home';
@@ -79,29 +79,32 @@
 //@import '../../node_modules/wallop/css/wallop';
 //@import '../../node_modules/wallop/css/wallop--slide';
 
+body {
+	margin-top: 120px;
+}
 
 // Debugging 
 body {
-	border-top: 4px solid red;
+	border-left: 4px solid red;
 
 	@include media-breakpoint-up(xs) {
-		border-top: 4px solid green;
+		border-left: 4px solid green;
 	}
 
 	@include media-breakpoint-up(sm) {
-		border-top: 4px solid blue;
+		border-left: 4px solid blue;
 	}
 
 	@include media-breakpoint-up(md) {
-		border-top: 4px solid yellow;
+		border-left: 4px solid yellow;
 	}
 
 	@include media-breakpoint-up(lg) {
-		border-top: 4px solid orange;
+		border-left: 4px solid orange;
 	}
 
 	@include media-breakpoint-up(xl) {
-		border-top: 4px solid steelblue;
+		border-left: 4px solid steelblue;
 	}
 }
 

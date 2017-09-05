@@ -1,26 +1,23 @@
 import {combineReducers} from 'redux';
 
-import customers from './customerReducers';
-import authentication from '../customer/loginReducers';
-import details from '../customer/customerDetailReducers';
-import categories from './categoryReducers';
-import addresses from './addressReducers';
+// import customers from './customerReducers';
+import authentication from 'lib/redux/authentication/authenticationReducers';
+import authentication2 from '../customer/loginReducers';
+import details from '../customer/customerReducers';
+// import categories from './categoryReducers';
 
+import addressBook from 'lib/redux/addressbook/addressBookReducers';
 import customerAddresses from '../addressbook/fetchAddressListReducers';
 import createAddressReducers from '../addressbook/createAddressReducers';
 
 
 const ecomApp = combineReducers({
-    customers,
+    addressBook,
+    authentication,
 	customer: combineReducers({
-        authentication,
+        authentication2,
         details
-    }),
-    // customerLogin,
-	categories,
-    customerAddresses,
-    createAddressReducers
+    })
 });
 
-export default ecomApp;
-
+export default {addressBook, authentication};

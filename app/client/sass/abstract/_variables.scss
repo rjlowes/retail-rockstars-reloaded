@@ -14,17 +14,20 @@ http://www.quora.com/What-are-typical-screen-width-breakpoints-that-should-be-co
 */
 
 
+$grid-gutter-width-base:     24px !default;
 
 // Colours
 //
 // ----------------------------
 $colour-pastel-gray-100: #cccccc;
+$colour-white-smoke-100: #f4f4f4;
 
 
 // Named colours
 //
 // ----------------------------
 $colour-placeholder: $colour-pastel-gray-100;
+$colour-border-reg: $colour-white-smoke-100;
 
 
 
@@ -80,7 +83,7 @@ $grad-transparent-stop-2:   rgba(6,6,6,0.7)     !default;
 // Typography
 // -------------------------------------------
 
-$baseline: .6;
+$baseline: 6px;
 
 // $font-family-heading:           'montserratblack', sans-serif;
 $font-family-heading:           'montserratmedium', sans-serif;
@@ -95,10 +98,10 @@ $font-size-h2:            2.4                 !default;
 $line-height-h2:          1                   !default;
 $font-size-h3:            2.1000              !default;
 $line-height-h3:          1.1429              !default;
-$font-size-h4:            1.7                 !default;
-$line-height-h4:          1.4118              !default;
-$font-size-p:           1.6                 !default;
-$line-height-p:         1.5                 !default;
+$font-size-h4:            1.4                 !default;
+$line-height-h4:          1.286              !default;
+$font-size-p:           1.4                 !default;
+$line-height-p:         1.286                 !default;
 
 $font-size-lead:           1.8                 !default;
 $line-height-lead:         1.3333              !default;

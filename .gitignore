@@ -1,6 +1,7 @@
 .idea
 .DS_Store
 npm-debug.log
+bin
 dist
 node_modules
 public

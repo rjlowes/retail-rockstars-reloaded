@@ -1,18 +1,20 @@
-import {createStore, applyMiddleware} from 'redux';
-// import { routerMiddleware, push } from 'react-router-redux';
+import {createStore, combineReducers, applyMiddleware} from 'redux';
+import {ConnectedRouter, routerReducer, routerMiddleware, push } from 'react-router-redux';
 import thunk from 'redux-thunk';
 
-import ecomApp from 'lib/redux/reducers/index';
-
-// let store = createStore(ecomApp, 'INITIAL_STATE');
-
-let store = createStore(ecomApp, applyMiddleware(thunk));
+import reducers from 'lib/redux/reducers/index';
 
 
-export default store;
+const initStore = (history) => {
+    let middleware = routerMiddleware(history);
 
+    return createStore(
+        combineReducers({
+            ...reducers,
+            router: routerReducer
+        }), 
+        applyMiddleware(thunk, middleware)
+    );
+};
 
-// export default function configureStore(initialState) {
-// 	return createStore(rootReducer, initialState);
-// }
-
+export default initStore;

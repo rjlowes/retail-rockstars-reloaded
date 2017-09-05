@@ -31,7 +31,7 @@ const AddressList = (props) => {
                             </div>
                             <div className="card-info__actions">
                                  <ul className="list-linear">
-                                    <li><a href="">edit</a></li>
+                                    <li><Link to={`/account/addressbook/${address._id}/edit`}>edit</Link></li>
                                     <li>
                                         <form action="" method="post">
                                             <button>Delete</button>

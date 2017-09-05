@@ -54,6 +54,7 @@
     &--l0 {
         @include media-breakpoint-up(md) {
             display: inline-block;
+            margin-right: $baseline * 2;
         }
     }
 
@@ -64,7 +65,8 @@
 
 .nav-list__item-link {
     &--l0 {
-
+        text-transform: uppercase;
+        @include font-size(1.4);
     }
 
     &--l1 {

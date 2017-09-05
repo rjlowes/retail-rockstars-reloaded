@@ -6,7 +6,7 @@ const Address = mongoose.model('Address');
 
 exports.list = function (req, res) {
     console.log('addreebook.list: ', req.user);
-    Address.find().where('user').equals(req.user._id).exec((err, addresses) => {
+    Address.find().where('customer').equals(req.user._id).exec((err, addresses) => {
         if(err) {
             return res.status(400).send({message: err.message});
         } else {
@@ -28,7 +28,7 @@ exports.create = function (req, res) {
     address.county = req.body.county;
     address.postcode = req.body.postcode;
     address.country = req.body.country;
-    address.customer = req.customer;
+    address.customer = req.user;
 
     address.save(err => {
         if(err) {

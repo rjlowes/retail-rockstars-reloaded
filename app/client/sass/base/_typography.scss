@@ -69,19 +69,19 @@ legend,
     margin-bottom: 1em;
 }
 
-.type-lead {
+.text-lead {
     @include rem($font-size-lead);
     line-height: $line-height-lead;
     margin-bottom: #{$line-height-lead}em;
 }
 
-.type-sml {
+.text-small {
     @include rem($font-size-sm);
     line-height: $line-height-sm;
-    margin-bottom: #{$font-size-sm}em;
+    margin-bottom: $baseline;
 }
 
-.type-mark {
+.text-mark {
     color: $colour-primary;
 }
 
@@ -139,11 +139,11 @@ p a {
     line-height: 1.5rem;
 }
 
-li {
-    @include rem($font-size-list);
-    line-height: $line-height-list;
-    margin-bottom: #{$font-size-list/2}em;
-}
+// li {
+//     @include rem($font-size-list);
+//     // line-height: $line-height-list;
+//     // margin-bottom: #{$font-size-list/2}em;
+// }
 
 dl {
     overflow:hidden;

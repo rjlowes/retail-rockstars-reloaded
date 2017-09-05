@@ -2,7 +2,7 @@ import {
     ADDRESSESBOOK_FETCH_REQUEST, 
     ADDRESSESBOOK_FETCH_SUCCESS,
     ADDRESSESBOOK_FETCH_FAILURE
-} from './fetchAddressListActions';
+} from 'lib/redux/addressbook/addressBookConstants';
 
 
 const defaultState = {

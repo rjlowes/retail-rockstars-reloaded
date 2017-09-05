@@ -50,6 +50,7 @@ exports.initSession = function (app) {
 
 exports.initModulesServerRoutes = function (app, passport) {
 	// require(path.join(__rootdir, '/modules/users/routes/users.routes'))(app);
+	require(path.join(__rootdir, '/modules/customer/routes/authentication.routes'))(app);
 	require(path.join(__rootdir, '/modules/customer/routes/customer.routes'))(app);
 	require(path.join(__rootdir, '/modules/customer/routes/title.routes'))(app);
 	require(path.join(__rootdir, '/modules/addressbook/routes/address.routes'))(app);

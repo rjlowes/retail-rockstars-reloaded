@@ -1,0 +1,42 @@
+.c-togglebox {
+
+}
+
+.c-togglebox__main {
+
+    @include media-breakpoint-down(md) {
+        left: 9999px;
+        opacity: 0;
+        transition: opacity .2s linear;
+
+        &--show {
+            left: 0;
+            opacity: 1;
+        }
+    }
+}
+
+.c-togglebox__btn {
+    background-color: #ef494f;
+    border-radius: 100%;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+    cursor: pointer;
+    float: right;
+    height: 54px;
+    width: 54px;
+    transition: all .2s linear;
+
+    &--show {
+        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAA4CAYAAACohjseAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAANBJREFUeNrs2zEKwkAQheHsFmltBO+W2tZL6Fls1INJtBCxS3B9IVNI+p3A8A882K2GL7sQmJBUSmkca6Mk5eXVMDvi9spDeSoHr6bJ8QTvys7WbzvNUMBloxTtiq5SAAECBAgQIECAAAECBAgQIECAAAFWAbbKWRmbebRXK8uq2Ws0UzvNRTvbRKwuB7+mecJdlKsyBIINZroxuuc1ARAgQIAAAQIECBAgQIAAAQIECBDgisD+b/2JCDw28zeDr3LyapqcfyvY2kPtvRr+BBgAr3dW/fZtoWAAAAAASUVORK5CYII=) center center no-repeat #9a9c9d;
+        border-radius: 0 100% 100%;
+        box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+        transform: rotate(45deg);
+    }
+
+    @include media-breakpoint-up(lg) {
+        display: none;
+    }
+}
+
+
+
